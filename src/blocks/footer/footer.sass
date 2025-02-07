@@ -1,0 +1,22 @@
+.footer
+  background-color: $footer
+  padding: 30px 0
+
+  &__container
+    display: flex
+    flex-direction: column
+    gap: 10px
+    justify-content: center
+    align-items: center
+    text-align: center
+
+  &__author
+    font-size: 32px
+    @include mobile
+      font-size: 24px
+
+  &__profession,
+  &__copyright
+    font-size: 16px
+    @include mobile
+      font-size: 14px

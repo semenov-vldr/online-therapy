@@ -1,0 +1,22 @@
+section.feedback-group.border-light
+    .feedback-group__container.container
+        .feedback-group__main
+            .feedback-group__aside
+                h2.feedback-group__title.title-section.decor-line.decor-line--light Найти свою группу просто
+                p.feedback-group__subtitle Эти три простых шага помогут найти свою группу и начать групповую терапию
+                picture.feedback-group__img
+                    source(srcset='./assets/img/feedback-group-mobile.png' media="(max-width: 1200px)")
+                    img(src='./assets/img/feedback-group.png' alt="Pic")
+
+            ul.feedback-group__list
+                li Заполните короткую форму. Благодаря этой форме у терапевта будет возможность с вами связаться
+                li Запланируйте первую встречу со своим будущем групповым терапевтом. На этой встрече Вы поймете, подходит ли Вам терапевт и обсудите с ним все правила групповой терапии.
+                li Присоединяйтесь к своей группе! Группа будет проходить еженедельно, в одно и тоже время.
+
+
+        form.feedback-group__form
+            h3.feedback-group__form-title.font-decor Записаться на групповую терапию
+            .feedback-group__form-body
+                input.input--dark(placeholder="Ваше имя" name="name" minlength="3" autocomplete="off" required)
+                input.input--dark(placeholder="Телефон" name="phone" inputmode="tel" data-tel-input minlength="15" autocomplete="off" required)
+                button(type="submit") Отправить

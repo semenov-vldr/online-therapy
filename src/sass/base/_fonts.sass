@@ -1,0 +1,34 @@
+@import "mixins"
+
+@mixin font-face($font-name, $font-name-weight, $weight: 400, $style: normal)
+  @font-face
+    font-family: $font-name
+    src: url("../fonts/#{$font-name}/#{$font-name}-#{$font-name-weight}.woff2") format('woff2'), url("../fonts/#{$font-name}/#{$font-name}-#{$font-name-weight}.woff") format('woff')
+    font-weight: $weight
+    font-style: $style
+
+
+// Наименование шрифта
+$font-name: "Raleway"
+
+@include font-face($font-name, Light, 200)
+@include font-face($font-name, Light-Italic, 200, italic)
+@include font-face($font-name, Regular)
+@include font-face($font-name, Regular-Italic, 400, italic)
+@include font-face($font-name, Medium, 500)
+@include font-face($font-name, Medium-Italic, 500, italic)
+@include font-face($font-name, SemiBold, 600)
+@include font-face($font-name, SemiBold-Italic, 600, italic)
+@include font-face($font-name, Bold, 700)
+
+@include font-face("ViaodaLibre", Regular)
+
+
+
+html
+  font-family: $font-name, sans-serif
+  font-weight: 400
+  -webkit-text-size-adjust: none
+  line-height: 1.3
+  @include fontSize(14, 20)
+

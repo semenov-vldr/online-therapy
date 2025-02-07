@@ -1,0 +1,27 @@
+.education
+
+  &__list
+    display: grid
+    grid-template-columns: 1fr 1fr
+    border-top: 1px solid rgba(#141A1B, 0.2)
+    margin-bottom: 30px
+    @include tablet
+      grid-template-columns: 1fr
+
+    li
+      padding: 30px 20px
+      border-bottom: 1px solid rgba(#141A1B, 0.2)
+      line-height: 1.4
+      text-wrap: balance
+      @include fontSize(14, 20)
+      @include tablet
+        padding: 20px 10px
+
+  &__text
+    @include fontSize(14, 20)
+    & + &
+      margin-top: 12px
+    &:last-child
+      border-bottom: 1px solid rgba(#141A1B, 0.2)
+      padding-bottom: 32px
+

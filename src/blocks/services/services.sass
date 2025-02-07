@@ -1,0 +1,43 @@
+.services
+
+  &__list
+    display: flex
+    flex-direction: column
+    gap: 20px
+
+  &__item
+    background-color: #fff
+    box-shadow: rgba(#8D8677, 0.08) 0 10px 30px 4px
+    display: flex
+    flex-direction: column
+    gap: 32px
+    border-radius: 20px
+    padding: 40px 50px 60px
+    @include fontSize(14, 20)
+    @include mobile
+      gap: 24px
+      padding: 30px
+
+  &__item-title
+    text-transform: uppercase
+    @include fontSize(20, 36)
+    font-weight: 600
+    letter-spacing: 0.15em
+
+  &__item-list
+    display: flex
+    flex-direction: column
+    gap: 30px
+    font-style: italic
+    padding-left: 24px
+    @include mobile
+      gap: 10px
+      padding-left: 16px
+    li
+      list-style-type: disc
+
+  @include mobile
+    .blockquote::before
+      display: none
+
+

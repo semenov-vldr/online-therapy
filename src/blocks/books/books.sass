@@ -1,0 +1,44 @@
+.books
+
+  &__header
+    margin-bottom: 60px
+    @include mobile
+      margin-bottom: 20px
+
+  h2
+    margin-bottom: 0
+
+  &__subtitle
+    @include fontSize(14, 20)
+
+  img
+    width: 100%
+    box-shadow: rgba($color, 0.08) 0 4px 12px 2px
+
+
+  &__slider
+    padding-bottom: 120px
+    @include mobile
+      padding-bottom: 80px
+
+  .swiper-prev,
+  .swiper-next
+    position: absolute
+    width: 60px
+    height: 60px
+    background-position: center
+    background-repeat: no-repeat
+    background-size: contain
+    bottom: 0
+    transform: translateX(-50%)
+    z-index: 1
+    @include mobile
+      width: 48px
+      height: 48px
+  .swiper-prev
+    background-image: url("../img/icons/swiper-nav-left.svg")
+    left: calc(50% - 30px)
+  .swiper-next
+    background-image: url("../img/icons/swiper-nav-left.svg")
+    transform: rotate(180deg)
+    left: calc(50% + 30px)

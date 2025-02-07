@@ -1,0 +1,265 @@
+@import "containers"
+
+section
+  scroll-margin: 40px
+  @include mobile
+    scroll-margin: 20px
+
+
+.title-section
+  font-family: "ViaodaLibre", sans-serif
+  @include fontSize(40, 64)
+  line-height: 1.1
+
+.flex-center
+  display: flex
+  align-items: center
+  justify-content: center
+
+
+.font-decor
+  font-family: "ViaodaLibre", sans-serif
+  line-height: 1
+
+
+.scroll-margin
+  scroll-margin: 120px
+  @include mobile
+    scroll-margin: 70px
+
+
+.blockquote
+  display: inline-flex
+  gap: 20px
+  position: relative
+  &::before,
+  &::after
+    content: ""
+    display: inline-block
+    width: 50px
+    height: 40px
+    flex: 0 0 50px
+    background-size: contain
+    background-repeat: no-repeat
+    background-position: center
+    @include tablet
+      width: 40px
+      height: 32px
+      flex: 0 0 40px
+  &::after
+    margin-top: auto
+    transform: rotate(180deg)
+  &.blockquote--light
+    &::before,
+    &::after
+      background-image: url("../img/icons/quotes-open-grey.svg")
+  &.blockquote--primary
+    &::before,
+    &::after
+      background-image: url("../img/icons/quotes-open-primary.svg")
+
+  &__inner
+    display: flex
+    flex-direction: column
+    gap: 4px
+
+  blockquote
+    font-style: italic
+    @include fontSize(16, 20)
+    line-height: 1.5
+  cite
+    font-weight: 500
+    font-style: normal
+
+.semibold
+  font-weight: 600
+
+.light-block
+  color: $color-dark
+  background-color: $color
+  width: calc(100% - 80px)
+  margin: 0 auto
+  border-radius: 20px
+  padding: 80px 0
+  @include tablet
+    padding: 40px 0
+  @include mobile
+    padding: 32px 0
+    width: calc(100% - 40px)
+
+.border-light
+  border: 1px solid $color
+  width: calc(100% - 80px)
+  margin: 0 auto
+  border-radius: 20px
+  padding: 80px 0
+  @include tablet
+    padding: 40px 0
+  @include mobile
+    padding: 32px 0
+    width: calc(100% - 40px)
+
+.decor-line
+  position: relative
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: 12px
+  &::after
+    content: ""
+    display: inline-block
+    width: 22px
+    height: 22px
+    background-size: contain
+    background-repeat: no-repeat
+    background-position: center
+  &::before
+    content: ""
+    position: absolute
+    transform: translateY(100%)
+    width: 100%
+    height: 1px
+    background-color: $color
+    bottom: 12px
+    left: 0
+  &.decor-line--light
+    &::after
+      background-image: url("../img/icons/star-light.svg")
+    &::before
+      background-color: $color
+
+  &.decor-line--dark
+    &::after
+      background-image: url("../img/icons/star-dark.svg")
+    &::before
+      background-color: $bg
+
+
+
+input
+  width: 100%
+  padding: 24px 50px
+  min-height: 88px
+  border-radius: 100px
+  font-size: 24px
+  @include tablet
+    font-size: 20px
+    padding: 20px 32px
+    min-height: 72px
+  @include mobile
+    font-size: 16px
+    padding: 16px 20px
+    min-height: 60px
+  &.input--light
+    color: rgba($color-dark, 0.7)
+    border: 1px solid rgba($color-dark, 0.12)
+    background-color: rgba($color-dark, 0.04)
+  &.input--dark
+    color: rgba($color, 0.4)
+    border: 1px solid rgba($color, 0.12)
+    background-color: rgba($color, 0.04)
+  & + &
+    margin-top: 10px
+
+
+
+
+
+
+.note
+  display: flex
+  flex-direction: column
+  gap: 40px
+  position: relative
+  font-style: italic
+  width: 40%
+  @include fontSize(18, 24)
+  margin: 30px 20px 30px 80px
+  float: right
+  text-align: left
+  @include tablet
+    margin: 40px
+  &::before
+    content: ""
+    display: inline-block
+    background-image: url("../img/icons/note-decor.svg")
+    width: 260px
+    height: 14px
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    @include mobile
+      width: 150px
+      height: 8px
+      margin: 0 auto
+  @include mobile
+    width: auto
+    float: initial
+    margin: 16px -16px
+    padding: 20px
+    gap: 20px
+    font-size: 18px
+    text-align: center
+    background-color: rgba($color, 0.04)
+
+
+.button-outline
+  display: block
+  width: fit-content
+  text-transform: uppercase
+  font-size: 40px
+  font-weight: 600
+  padding: 16px 40px
+  border-radius: 100px
+  text-align: center
+  border: 2px solid currentColor
+  transition: $transition
+  margin-top: auto
+  @include fontSize(20, 40)
+  &.button-outline--light
+    color: $color
+    &:hover
+      background-color: $color
+      border-color: $color
+      color: $bg
+  &.button-outline--dark
+    color: $bg
+    &:hover
+      background-color: $bg
+      border-color: $bg
+      color: $color
+  & + &
+    margin-top: 10px
+  @include mobile
+    width: 100%
+
+
+.btn-up
+  position: fixed
+  right: 50px
+  bottom: 100px
+  transition: $transition
+  opacity: 0
+  visibility: hidden
+  z-index: 1
+  @include mobile
+    width: 50px
+    right: 16px
+    bottom: 50px
+  &.js-visible
+    opacity: 1
+    visibility: visible
+
+.whatsapp
+  position: fixed
+  right: 50px
+  bottom: 200px
+  transition: $transition
+  z-index: 1
+  opacity: 0.7
+  @include mobile
+    width: 50px
+    right: 16px
+    bottom: 120px
+  &:hover
+    opacity: 1

@@ -1,0 +1,49 @@
+.articles
+  padding-top: 60px
+  @include mobile
+    padding-top: 40px
+
+  &__title
+    text-align: center
+    text-transform: initial
+
+  &__list
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: 40px
+    @include mobile
+      grid-template-columns: 1fr
+      gap: 20px
+
+  &__item
+    border: 1px solid rgba($color, 0.12)
+    padding: 40px
+    transition: $transition
+    @include mobile
+      padding: 20px
+    &:hover .articles__item-text::after
+      transform: translateX(10px)
+    &:hover
+      border-color: rgba($color, 0.3)
+
+    &-caption
+      @include fontSize(16, 20)
+      font-weight: 500
+      margin-bottom: 20px
+
+    &-text
+      position: relative
+      font-size: 14px
+      font-weight: 300
+      &::after
+        content: ""
+        display: block
+        background-image: url("../img/icons/arrow-right.svg")
+        width: 40px
+        height: 40px
+        background-size: contain
+        background-position: center
+        background-repeat: no-repeat
+        margin-top: 20px
+        margin-left: auto
+        transition: $transition
