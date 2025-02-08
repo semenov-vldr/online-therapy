@@ -83,9 +83,10 @@ section
   padding: 80px 0
   @include tablet
     padding: 40px 0
+    width: calc(100% - 40px)
   @include mobile
     padding: 32px 0
-    width: calc(100% - 40px)
+    width: calc(100% - 20px)
 
 .border-light
   border: 1px solid $color
@@ -103,13 +104,13 @@ section
   position: relative
   display: flex
   flex-direction: column
-  align-items: center
   gap: 12px
   &::after
     content: ""
     display: inline-block
     width: 22px
     height: 22px
+    margin: 0 auto
     background-size: contain
     background-repeat: no-repeat
     background-position: center
@@ -136,7 +137,7 @@ section
 
 
 
-input
+input, textarea
   width: 100%
   padding: 24px 50px
   min-height: 88px
@@ -160,6 +161,9 @@ input
     background-color: rgba($color, 0.04)
   & + &
     margin-top: 10px
+
+textarea
+  border-radius: 40px
 
 
 
@@ -236,30 +240,38 @@ input
 
 .btn-up
   position: fixed
-  right: 50px
-  bottom: 100px
+  right: 5%
+  bottom: 190px
   transition: $transition
   opacity: 0
   visibility: hidden
   z-index: 1
+  width: 80px
+  height: 80px
+  background-color: $color-dark
+  border-radius: 50%
+  display: flex
+  align-items: center
+  justify-content: center
   @include mobile
-    width: 50px
-    right: 16px
-    bottom: 50px
+    width: 44px
+    height: 44px
+    right: 10px
+    bottom: 20px
   &.js-visible
     opacity: 1
     visibility: visible
+  img
+    width: 24px
 
 .whatsapp
   position: fixed
-  right: 50px
-  bottom: 200px
+  right: 5%
+  bottom: 280px
   transition: $transition
   z-index: 1
-  opacity: 0.7
+  width: 80px
   @include mobile
-    width: 50px
-    right: 16px
-    bottom: 120px
-  &:hover
-    opacity: 1
+    width: 44px
+    right: 10px
+    bottom: 70px

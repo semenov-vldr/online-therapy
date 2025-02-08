@@ -48,6 +48,7 @@
       align-items: center
       @include fontSize(16, 24)
       text-wrap: balance
+      color: rgba($color, 0.8)
       counter-increment: advantages-item 1
       padding-left: 100px
       @include tablet
@@ -95,6 +96,7 @@
         @include tablet
           grid-column: 1 / -1
       button
+        position: relative
         background-color: $primary
         width: 100%
         grid-column: 2 / 3
@@ -108,3 +110,15 @@
           grid-column: initial
           grid-row: initial
           margin-top: 20px
+        @media (min-width: $width-tablet)
+          &::after
+            content: ""
+            position: absolute
+            width: 220px
+            height: 120px
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            background-color: $primary
+            filter: blur(140px)
+            user-select: none

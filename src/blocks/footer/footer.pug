@@ -1,12 +1,38 @@
-footer.footer#footer
+footer.footer.light-block
     .footer__container.container
-        span.footer__author.font-decor Барке Ксения Андреевна
-        span.footer__profession Психотерапевт, клинический психолог
-        span.footer__copyright © 2024
+        form.footer__form
+            h2.footer__form-title.title-section.decor-line.decor-line--dark Напишите мне
+            p.footer__form-subtitle Оставьте свои контакты в этой форме, и я обязательно с вами свяжусь.
+            .footer__form-body
+                input.input--light(placeholder="Ваше имя" name="name" minlength="3" autocomplete="off" required)
+                input.input--light(placeholder="Телефон" name="phone" inputmode="tel" data-tel-input minlength="15" autocomplete="off" required)
+                textarea.input--light(rows="4" placeholder="Сообщение")
+                button(type="submit") Отправить
+
+        .footer__contacts
+            img.footer__contacts-img(src="./assets/img/ava-feedback.png")
+            h3.footer__contacts-title.font-decor Либо свяжитесь со мной по почте или WhatsApp
+            ul.footer__contacts-list
+                li.footer__contacts-item.decor-line.decor-line--dark
+                    span Телефон & whatsapp
+                    a.footer__contacts-item-tel(href="tel:+79366660016") 8 936 666 00 16
+                li.footer__contacts-item
+                    span Эл. почта
+                    a.footer__contacts-item-email(href="mailto:kseniabarke@gmail.com" title="почта") kseniabarke@gmail.com
+
+            .footer__contacts-social
+                a.footer__contacts-social-item(href="https://wa.me/79366660016" title="WhatsApp" target="_blank")
+                    img(src="./assets/img/icons/wa.svg")
+                a.footer__contacts-social-item(href="" title="Telegram" target="_blank")
+                    img(src="./assets/img/icons/telegram.svg")
+                a.footer__contacts-social-item(href="mailto:kseniabarke@gmail.com" title="Email" target="_blank")
+                    img(src="./assets/img/icons/email.svg")
 
 
-button.btn-up
+
+
+button.btn-up(title="Наверх")
     img(src="./assets/img/icons/up.svg")
 
 a.whatsapp(href="https://wa.me/79366660016" target="_blank" title="WhatsApp")
-    img(src="./assets/img/icons/whatsapp.svg")
+    img(src="./assets/img/icons/whatsapp-green.svg")

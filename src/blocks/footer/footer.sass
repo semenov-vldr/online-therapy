@@ -1,22 +1,84 @@
 .footer
-  background-color: $footer
-  padding: 30px 0
 
   &__container
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    gap: 40px
+    align-items: center
+    @include tablet
+      grid-template-columns: 1fr
+      gap: 16px
+
+  &__form
     display: flex
     flex-direction: column
-    gap: 10px
-    justify-content: center
+    gap: 30px
+
+    button
+      background-color: $primary
+      width: 100%
+      border-radius: 100px
+      padding: 24px 32px
+      text-transform: uppercase
+      font-weight: 800
+      color: $color
+      margin-top: 20px
+      @include tablet
+        padding: 20px 32px
+        margin-top: 10px
+
+    &-subtitle
+      @include fontSize(16, 20)
+      color: rgba($color-dark, 0.7)
+
+
+  &__contacts
+    display: flex
+    flex-direction: column
     align-items: center
+    gap: 32px
+    border: 1px solid $color-dark
+    border-radius: 20px
+    padding: 32px
     text-align: center
+    @include tablet
+      padding: 20px 12px
 
-  &__author
-    font-size: 32px
-    @include mobile
-      font-size: 24px
+    &-img
+      max-width: 200px
+      @include tablet
+        width: 40%
 
-  &__profession,
-  &__copyright
-    font-size: 16px
-    @include mobile
-      font-size: 14px
+    &-title
+      @include fontSize(32, 36)
+      text-wrap: balance
+
+
+    &-list
+      display: flex
+      flex-direction: column
+      gap: 30px
+
+    &-item
+      display: flex
+      flex-direction: column
+      gap: 12px
+      letter-spacing: 2px
+      span
+        @include fontSize(12, 16)
+        color: rgba($color-dark, 0.8)
+      &-tel
+        @include fontSize(24, 36)
+        font-weight: 700
+      &-email
+        @include fontSize(16, 24)
+        font-weight: 700
+
+    &-social
+      display: flex
+      gap: 20px
+      align-items: center
+      img
+        width: 80px
+        @include tablet
+          width: 60px
