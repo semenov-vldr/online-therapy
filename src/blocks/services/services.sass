@@ -1,43 +1,69 @@
 .services
+  @include tablet
+    border: none
+    width: calc(100% - 20px)
+
+  &__container
+    @include tablet
+      padding: 0
+
+  &__title
+    margin-bottom: 30px
+    @include tablet
+      margin-bottom: 20px
 
   &__list
+    color: $color-dark
     display: flex
     flex-direction: column
     gap: 20px
 
+
   &__item
-    background-color: #fff
-    box-shadow: rgba(#8D8677, 0.08) 0 10px 30px 4px
+    border-radius: 20px
+    background-color: $color
+    padding: 40px
+    line-height: 1.4
     display: flex
     flex-direction: column
-    gap: 32px
-    border-radius: 20px
-    padding: 40px 50px 60px
-    @include fontSize(14, 20)
-    @include mobile
-      gap: 24px
-      padding: 30px
-
-  &__item-title
-    text-transform: uppercase
-    @include fontSize(20, 36)
-    font-weight: 600
-    letter-spacing: 0.15em
+    gap: 30px
+    box-shadow: rgba(#8D8677, 0.08) 0 10px 30px 4px
+    @include tablet
+      gap: 20px
+      padding: 20px
+    &-title
+      @include fontSize(32, 36)
+    p
+      text-align: justify
 
   &__item-list
     display: flex
     flex-direction: column
     gap: 30px
-    font-style: italic
-    padding-left: 24px
-    @include mobile
-      gap: 10px
-      padding-left: 16px
-    li
-      list-style-type: disc
+    padding-left: 30px
+    @include tablet
+      gap: 20px
+      padding-left: 20px
 
-  @include mobile
-    .blockquote::before
-      display: none
+    li
+      font-style: italic
+      font-weight: 400
+      list-style-type: disc
+      padding-left: 20px
+      @include tablet
+        padding-left: 0
+
+  &__item-price
+    width: fit-content
+    @include fontSize(24, 34)
+    border-radius: 100px
+    border: 1px solid $color-dark
+    padding: 20px 30px
+    line-height: 1
+    text-align: center
+    @include tablet
+      padding: 12px 16px
+      width: 100%
+
 
 

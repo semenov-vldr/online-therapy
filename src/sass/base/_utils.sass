@@ -29,7 +29,8 @@ section
 
 
 .blockquote
-  display: inline-flex
+  display: flex
+  align-items: center
   gap: 20px
   position: relative
   &::before,
@@ -46,30 +47,31 @@ section
       width: 40px
       height: 32px
       flex: 0 0 40px
+
   &::after
-    margin-top: auto
     transform: rotate(180deg)
   &.blockquote--light
     &::before,
     &::after
       background-image: url("../img/icons/quotes-open-grey.svg")
-  &.blockquote--primary
-    &::before,
-    &::after
-      background-image: url("../img/icons/quotes-open-primary.svg")
 
   &__inner
     display: flex
     flex-direction: column
     gap: 4px
+    @include fontSize(14, 16)
 
   blockquote
     font-style: italic
-    @include fontSize(16, 20)
-    line-height: 1.5
+    opacity: 0.6
+
   cite
     font-weight: 500
     font-style: normal
+    opacity: 0.7
+  @include mobile
+    &::before
+      display: none
 
 .semibold
   font-weight: 600
