@@ -1,7 +1,6 @@
 .services
   @include tablet
     border: none
-    width: calc(100% - 20px)
 
   &__container
     @include tablet
@@ -44,6 +43,8 @@
     @include tablet
       gap: 20px
       padding-left: 20px
+    @include mobile
+      gap: 10px
 
     li
       font-style: italic

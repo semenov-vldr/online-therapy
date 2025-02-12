@@ -6,7 +6,8 @@
   &__subtitle
     @include fontSize(14, 20)
 
-.block-article.what-is
+.block-article.what-is,
+.block-article.ethics
 
   .block-article
     &__container
@@ -30,7 +31,6 @@
       display: flex
       flex-direction: column
       gap: 16px
-      text-indent: 30px
       @media (min-width: 1200px)
         grid-row: 1 / 4
         grid-column: 2 / 3
@@ -47,7 +47,7 @@
         left: 50%
         transform: translateX(-50%)
         background-color: $primary
-        filter: blur(200px)
+        filter: blur(160px)
         border-radius: 50%
       img
         position: relative
@@ -117,9 +117,6 @@
         left: 50%
         transform: translateX(-50%)
 
-
-
-
     &__img
       position: relative
       @media (min-width: 1200px)
@@ -148,7 +145,52 @@
           border-radius: 20px
           padding: 20px 20px
 
-
     &__text-bottom img
       margin: 20px auto 0
 
+
+
+
+.block-article.themes
+
+  .block-article
+    &__container
+      display: grid
+      grid-template-columns: repeat(2, 1fr)
+      gap: 40px
+      @include tablet
+        grid-template-columns: 1fr
+        gap: 24px
+
+    &__subtitle
+      color: rgba($color, 0.7)
+      margin-bottom: 20px
+      @include tablet
+        margin-bottom: 32px
+
+    &__text
+      display: flex
+      flex-direction: column
+      gap: 16px
+
+    &__img
+      position: relative
+      &::after
+        content: ""
+        position: absolute
+        width: 60%
+        aspect-ratio: 1 / 1
+        bottom: -64px
+        left: 20%
+        transform: translateX(-50%)
+        background-color: $primary
+        filter: blur(200px)
+        border-radius: 50%
+      img
+        position: relative
+        z-index: 1
+      @include tablet
+        margin: 0 auto
+        &::after
+          filter: blur(140px)
+          bottom: -30px
