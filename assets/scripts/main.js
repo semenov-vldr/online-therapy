@@ -383,10 +383,67 @@ phoneInputs.forEach(function (input) {
 });
 "use strict";
 
+var articles = document.querySelector(".articles");
+if (articles) {
+  var displayPage = function displayPage(page) {
+    var startIndex = (page - 1) * cardsPerPage;
+    var endIndex = startIndex + cardsPerPage;
+    cards.forEach(function (card, index) {
+      card.classList.toggle("active", index >= startIndex && index < endIndex);
+    });
+  };
+  var updatePagination = function updatePagination() {
+    prevButton.disabled = currentPage === 1;
+    nextButton.disabled = currentPage === totalPages;
+    pageLinks.forEach(function (link) {
+      var page = parseInt(link.getAttribute('data-page'));
+      link.classList.toggle('active', page === currentPage);
+    });
+    document.getElementById("articles-top").scrollIntoView();
+  };
+  var cardsPerPage = 4;
+  var articlesNav = articles.querySelector(".articles__nav");
+  var prevButton = articlesNav.querySelector(".articles__nav-prev");
+  var nextButton = articlesNav.querySelector(".articles__nav-next");
+  var pageLinks = articlesNav.querySelectorAll(".articles__nav-item");
+  var cards = Array.from(articles.querySelectorAll(".articles__item"));
+  var totalPages = Math.ceil(cards.length / cardsPerPage);
+  var currentPage = 1;
+  ;
+  prevButton.addEventListener('click', function () {
+    if (currentPage > 1) {
+      currentPage--;
+      displayPage(currentPage);
+      updatePagination();
+    }
+  });
+  nextButton.addEventListener('click', function () {
+    if (currentPage < totalPages) {
+      currentPage++;
+      displayPage(currentPage);
+      updatePagination();
+    }
+  });
+  pageLinks.forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      var page = parseInt(link.getAttribute('data-page'));
+      if (page !== currentPage) {
+        currentPage = page;
+        displayPage(currentPage);
+        updatePagination();
+      }
+    });
+  });
+  displayPage(currentPage);
+  updatePagination();
+}
+"use strict";
+
 new Swiper('.books__slider', {
   navigation: {
-    prevEl: '.swiper-prev',
-    nextEl: '.swiper-next'
+    prevEl: '.nav-prev',
+    nextEl: '.nav-next'
   },
   // Откл функционала, если слайдов меньше, чем нужно
   watchOverflow: true,
