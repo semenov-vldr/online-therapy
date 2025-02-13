@@ -1,8 +1,8 @@
 new Swiper('.books__slider', {
 
     navigation: {
-        prevEl: '.swiper-prev',
-        nextEl: '.swiper-next',
+        prevEl: '.nav-prev',
+        nextEl: '.nav-next',
     },
 
     // Откл функционала, если слайдов меньше, чем нужно

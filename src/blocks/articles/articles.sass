@@ -1,27 +1,40 @@
 .articles
 
+  &__container
+    display: flex
+    flex-direction: column
+    gap: 80px
+    align-items: center
+    @include tablet
+      gap: 40px
+    @include mobile
+      gap: 24px
+
   &__list
     display: grid
     grid-template-columns: repeat(2, 1fr)
     gap: 40px
     @include tablet
       grid-template-columns: 1fr
+      gap: 20px
 
   &__item
     background-color: $color
     border-radius: 20px
     padding: 30px 30px 60px
     color: $color-dark
-    display: flex
+    display: none
     flex-direction: column
     gap: 30px
+    overflow: hidden
     @include tablet
       gap: 20px
       padding: 20px 20px 40px
     &:hover .articles__item-link::after
       width: 100%
       left: 0
-
+    &.active
+      display: flex
 
     &-title
       @include fontSize(32, 40)
@@ -51,3 +64,49 @@
         background: currentColor
         transition: width 0.3s ease 0s, left 0.3s ease 0s
         width: 0
+
+  &__nav
+    display: flex
+    align-items: center
+    gap: 20px
+    @include mobile
+      gap: 4px
+
+  &__nav-prev,
+  &__nav-next
+    width: 60px
+    height: 60px
+    background-position: center
+    background-repeat: no-repeat
+    background-size: contain
+    z-index: 1
+    margin: 0 20px
+    @include mobile
+      width: 48px
+      height: 48px
+    &:disabled
+      opacity: 0.7
+      cursor: auto
+  &__nav-prev
+    background-image: url("../img/icons/swiper-nav-left.svg")
+  &__nav-next
+    background-image: url("../img/icons/swiper-nav-left.svg")
+    transform: rotate(180deg)
+
+  &__nav-item
+    display: flex
+    align-items: center
+    justify-content: center
+    font-size: 32px
+    width: 48px
+    height: 48px
+    border-radius: 50%
+    color: $color
+    line-height: 1
+    @include mobile
+      font-size: 24px
+      width: 40px
+      height: 40px
+    &.active,
+    &:hover
+      background-color: rgba($color, 0.08)
