@@ -1,0 +1,42 @@
+.article
+
+  &__aside
+    display: flex
+    flex-direction: column
+    gap: 20px
+    width: 50%
+    float: left
+    @include mobile
+      width: auto
+      float: initial
+    &.left
+      margin: 0 40px 40px 0
+      @include mobile
+        margin: 0 0 30px
+    &.right
+      margin: 0 0 40px 40px
+      @include mobile
+        margin: 0 0 30px
+
+    & > &-subtitle
+      line-height: 1.2
+      @include fontSize(14, 20)
+      opacity: 0.7
+      text-align: left
+      text-wrap: balance
+
+
+    &-img img
+      position: relative
+      z-index: 1
+    @include tablet
+      margin: 0 auto
+
+  p
+    @include fontSize(16, 24)
+    line-height: 1.4
+    text-align: justify
+  p + p
+    margin-top: 30px
+    @include tablet
+      margin-top: 20px
