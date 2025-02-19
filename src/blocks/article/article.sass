@@ -5,18 +5,20 @@
     flex-direction: column
     gap: 20px
     width: 50%
-    float: left
     @include mobile
       width: auto
-      float: initial
     &.left
       margin: 0 40px 40px 0
+      float: left
       @include mobile
         margin: 0 0 30px
+        float: initial
     &.right
       margin: 0 0 40px 40px
+      float: right
       @include mobile
         margin: 0 0 30px
+        float: initial
 
     & > &-subtitle
       line-height: 1.2
@@ -29,8 +31,17 @@
     &-img img
       position: relative
       z-index: 1
-    @include tablet
-      margin: 0 auto
+      @include mobile
+        margin: 0 auto
+    &-img.border
+      img
+        border: 1px solid $color-dark
+        border-radius: 20px
+        @include mobile
+          aspect-ratio: 3 / 2
+          width: 100%
+          max-width: 500px
+          height: 100%
 
   p
     @include fontSize(16, 24)
@@ -39,4 +50,60 @@
   p + p
     margin-top: 30px
     @include tablet
+      margin-top: 20px
+  p + .article__aside
+    margin-top: 30px
+    @include tablet
+      margin-top: 20px
+
+  &__italic-bold
+    display: flex
+    flex-direction: column
+    gap: 30px
+    font-weight: 600
+    font-style: italic
+    border-top: 1px solid $bg
+    border-bottom: 1px solid $bg
+    padding: 30px
+    margin-top: 30px
+    letter-spacing: 1px
+    @include fontSize(14, 24)
+    @include mobile
+      padding: 20px
+      margin-top: 20px
+      gap: 20px
+    *
+      font-weight: inherit
+    &-item
+      display: flex
+      flex-direction: column
+      gap: 16px
+      @include mobile
+        gap: 8px
+      ol
+        display: flex
+        flex-direction: column
+        gap: 16px
+        padding-left: 24px
+        @include mobile
+          gap: 8px
+          padding-left: 16px
+      &:not(:last-child)
+        border-bottom: 1px solid $bg
+        padding-bottom: 30px
+        @include mobile
+          padding-bottom: 20px
+
+  &__cite
+    display: flex
+    flex-direction: column
+    gap: 16px
+    padding: 30px
+    margin-top: 30px
+    font-weight: 500
+    color: $bg
+    letter-spacing: 1px
+    border-top: 1px solid $color-dark
+    @include mobile
+      padding: 20px
       margin-top: 20px

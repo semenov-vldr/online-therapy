@@ -1,7 +1,7 @@
 const articles = document.querySelector(".articles");
 if (articles) {
 
-  const cardsPerPage = 4;
+  const cardsPerPage = 6;
 
   const articlesNav = articles.querySelector(".articles__nav");
   const prevButton = articlesNav.querySelector(".articles__nav-prev");

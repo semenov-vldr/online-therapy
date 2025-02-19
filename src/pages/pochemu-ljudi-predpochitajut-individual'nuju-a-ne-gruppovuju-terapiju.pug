@@ -1,8 +1,11 @@
 extends ../layouts/main
 
 block variables
+  - var title_article = "Почему люди предпочитают индивидуальную, а не групповую терапию?"
   - var title = "Ксения Барке | Почему люди предпочитают индивидуальную, а не групповую терапию?"
 
 block content
-    include ../blocks/hero/hero-article
+
+    +hero_article(title_article, "Малкольм Пайнс")
+
     include ../blocks/article/pochemu-ljudi-predpochitajut-individual'nuju-a-ne-gruppovuju-terapiju
