@@ -1,4 +1,4 @@
-footer.footer.light-block
+footer.footer.light-block#footer
     .footer__container.container
         form.footer__form
             h2.footer__form-title.title-section.decor-line.decor-line--dark Напишите мне
@@ -35,4 +35,6 @@ button.btn-up(title="Наверх")
     img(src="./assets/img/icons/up.svg")
 
 a.whatsapp(href="https://wa.me/79366660016" target="_blank" title="WhatsApp")
-    img(src="./assets/img/icons/whatsapp-green.svg")
+    picture
+        source(srcset="./assets/img/icons/whatsapp-green-mobile.svg" media="(max-width: 767px)")
+        img(src="./assets/img/icons/whatsapp-green-desktop.svg")

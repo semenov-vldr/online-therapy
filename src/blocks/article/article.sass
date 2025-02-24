@@ -1,10 +1,16 @@
 .article
 
+  &__container.aside-row
+    display: flex
+    flex-direction: column
+    gap: 40px
+    @include tablet
+      gap: 30px
+
   &__aside
     display: flex
     flex-direction: column
     gap: 20px
-    width: 50%
     @include mobile
       width: auto
     & + p
@@ -12,23 +18,25 @@
     &.left
       margin: 0 40px 40px 0
       float: left
+      width: 50%
       @include mobile
         margin: 0 0 30px
         float: initial
+        width: auto
     &.right
       margin: 0 0 40px 40px
       float: right
+      width: 50%
       @include mobile
         margin: 0 0 30px
         float: initial
+        width: auto
 
-    & > &-subtitle
+    &-subtitle
       line-height: 1.2
       @include fontSize(14, 20)
       opacity: 0.7
-      text-align: left
-      text-wrap: balance
-
+      text-align: left !important
 
     &-img img
       position: relative
@@ -45,18 +53,19 @@
           max-width: 500px
           height: 100%
 
+
   p
     @include fontSize(16, 24)
     line-height: 1.4
     text-align: justify
   p + p
-    margin-top: 30px
+    margin-top: 24px
     @include tablet
-      margin-top: 20px
+      margin-top: 16px
   p + .article__aside
-    margin-top: 30px
+    margin-top: 24px
     @include tablet
-      margin-top: 20px
+      margin-top: 16px
 
   &__italic-bold
     display: flex
@@ -101,13 +110,79 @@
     flex-direction: column
     gap: 16px
     padding: 30px
-    margin-top: 30px
     font-weight: 500
     color: $bg
     letter-spacing: 1px
     border-top: 1px solid $color-dark
     @include mobile
       padding: 20px
-      margin-top: 20px
     a:hover
       text-decoration: underline
+    ul
+      display: flex
+      flex-direction: column
+      gap: 16px
+      padding-left: 20px
+      li
+        list-style-type: disc
+
+
+  &__aside.row
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    line-height: 1.4
+    gap: 40px
+    p, span
+      text-align: justify
+    @include tablet
+      grid-template-columns: 1fr
+      gap: 30px
+    .article__aside-text
+      display: flex
+      flex-direction: column
+      gap: 20px
+    &.img-left
+      .article__aside
+        &-img
+          order: -1
+    ul, ol
+      display: flex
+      flex-direction: column
+      gap: 16px
+      padding-left: 20px
+    ul li
+      list-style-type: disc
+
+  &__item
+    display: flex
+    flex-direction: column
+    gap: 30px
+    @include fontSize(16, 24)
+    @include tablet
+      gap: 20px
+    P + p
+      margin-top: 0
+    p, span
+      text-align: justify
+
+    &-list
+      display: flex
+      flex-direction: column
+      padding-left: 24px
+      gap: 20px
+      @include tablet
+        gap: 16px
+        padding-left: 16px
+
+  &__author
+    line-height: 1.2
+    @include fontSize(14, 20)
+    opacity: 0.7
+    text-align: left
+    text-wrap: balance
+
+  .order-1
+    @include tablet
+      order: -1
+
+

@@ -30,20 +30,18 @@
     @include tablet
       gap: 20px
       padding: 20px 20px 40px
-    &:hover .articles__item-link::after
-      width: 100%
-      left: 0
+    &:hover .articles__item-link
+      text-decoration: underline
+    //&:hover .articles__item-link::after
+    //  width: 100%
+    //  left: 0
     &.active
       display: flex
-
     &-title
       @include fontSize(32, 40)
-
     &-text
       color: rgba($color-dark, 0.7)
       @include fontSize(16, 20)
-      padding-bottom: 20px
-      border-bottom: 1px solid currentColor
 
 
     &-link
@@ -51,19 +49,23 @@
       position: relative
       text-align: center
       text-transform: uppercase
-      margin: auto
-
-      &:after
-        content: ""
-        position: absolute
-        display: block
-        bottom: 0
-        height: 2px
-        left: 50%
-        background: none repeat scroll 0 0 transparent
-        background: currentColor
-        transition: width 0.3s ease 0s, left 0.3s ease 0s
-        width: 0
+      margin: auto auto 0
+      border-top: 1px solid currentColor
+      padding-top: 30px
+      width: 100%
+      @include tablet
+        padding-top: 20px
+      //&:after
+      //  content: ""
+      //  position: absolute
+      //  display: block
+      //  bottom: 0
+      //  height: 2px
+      //  left: 50%
+      //  background: none repeat scroll 0 0 transparent
+      //  background: currentColor
+      //  transition: width 0.3s ease 0s, left 0.3s ease 0s
+      //  width: 0
 
   &__nav
     display: flex
