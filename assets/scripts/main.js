@@ -401,7 +401,7 @@ if (articles) {
     });
     document.getElementById("articles-top").scrollIntoView();
   };
-  var cardsPerPage = 6;
+  var cardsPerPage = 8;
   var articlesNav = articles.querySelector(".articles__nav");
   var prevButton = articlesNav.querySelector(".articles__nav-prev");
   var nextButton = articlesNav.querySelector(".articles__nav-next");
