@@ -1,0 +1,20 @@
+.alert-form
+  position: fixed
+  display: none
+  flex-direction: column
+  gap: 8px
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  max-width: 450px
+  width: calc(100% - 32px)
+  padding: 32px
+  border-radius: 16px
+  background-color: #fff
+  color: $color-dark
+  z-index: 1
+  text-align: center
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px
+  user-select: none
+  &.js-popup-success
+    display: flex

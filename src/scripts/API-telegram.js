@@ -8,10 +8,14 @@ if (forms) {
   forms.forEach(form => form.addEventListener("submit", sendMessageTelegram));
 }
 
+function formError () {
+  alert("Ошибка при отправке формы. Перезвоните по телефону на сайте");
+}
+
 function sendMessageTelegram (evt) {
   evt.preventDefault();
 
-  const successFormMessage = this.querySelector('.feedback__form-success');
+  const successFormMessage = document.querySelector('.alert-form');
 
   function formSuccess () {
     successFormMessage.classList.add('js-popup-success');
@@ -20,16 +24,13 @@ function sendMessageTelegram (evt) {
     }, 5 * 1000);
   }
 
-  function formError () {
-    alert("Ошибка при отправке формы. Перезвоните по телефону на сайте")
-  }
+const isGroupForm = this.classList.contains("feedback-group__form");
 
-
-  let message = `<b>Заявка с сайта К.Барке:</b>\n`;
+  let message = `<b>✉ Заявка с сайта "Групп-анализ ${isGroupForm ? "(запись в группу)" : ""}":</b>\n`;
   message += `<b>Имя:</b> ${this.name.value}\n`;
   message += `<b>Телефон:</b> ${this.phone.value}\n`;
 
-  if (this.message.value) {
+  if (!isGroupForm && this.message.value) {
     message += `<b>Сообщение:</b> ${this.message.value}\n`;
   }
 
@@ -43,6 +44,7 @@ function sendMessageTelegram (evt) {
     .then( () => {
       console.log("Заявка отправлена");
       formSuccess();
+      console.log(message);
     })
     .catch(err => {
       console.warn(err);

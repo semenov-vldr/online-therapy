@@ -1,12 +1,12 @@
 footer.footer.light-block#footer
     .footer__container.container
-        form.footer__form
+        form.footer__form.form
             h2.footer__form-title.title-section.decor-line.decor-line--dark Напишите мне
             p.footer__form-subtitle Оставьте свои контакты в этой форме, и я обязательно с вами свяжусь.
             .footer__form-body
                 input.input--light(placeholder="Ваше имя" name="name" minlength="3" autocomplete="off" required)
                 input.input--light(placeholder="Телефон" name="phone" inputmode="tel" data-tel-input minlength="15" autocomplete="off" required)
-                textarea.input--light(rows="4" placeholder="Сообщение")
+                textarea.input--light(rows="4" name="message" placeholder="Сообщение")
                 button(type="submit") Отправить
 
         .footer__contacts
@@ -29,7 +29,7 @@ footer.footer.light-block#footer
                     img(src="./assets/img/icons/email.svg")
 
 
-
+include ../alert-form/alert-form
 
 button.btn-up(title="Наверх")
     img(src="./assets/img/icons/up.svg")
