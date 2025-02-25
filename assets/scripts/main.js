@@ -10,22 +10,23 @@ if (forms) {
     return form.addEventListener("submit", sendMessageTelegram);
   });
 }
+function formError() {
+  alert("Ошибка при отправке формы. Перезвоните по телефону на сайте");
+}
 function sendMessageTelegram(evt) {
   evt.preventDefault();
-  var successFormMessage = this.querySelector('.feedback__form-success');
+  var successFormMessage = document.querySelector('.alert-form');
   function formSuccess() {
     successFormMessage.classList.add('js-popup-success');
     setTimeout(function () {
       successFormMessage.classList.remove('js-popup-success');
     }, 5 * 1000);
   }
-  function formError() {
-    alert("Ошибка при отправке формы. Перезвоните по телефону на сайте");
-  }
-  var message = "<b>\u0417\u0430\u044F\u0432\u043A\u0430 \u0441 \u0441\u0430\u0439\u0442\u0430 \u041A.\u0411\u0430\u0440\u043A\u0435:</b>\n";
+  var isGroupForm = this.classList.contains("feedback-group__form");
+  var message = "<b>\u2709 \u0417\u0430\u044F\u0432\u043A\u0430 \u0441 \u0441\u0430\u0439\u0442\u0430 \"\u0413\u0440\u0443\u043F\u043F-\u0430\u043D\u0430\u043B\u0438\u0437 ".concat(isGroupForm ? "(запись в группу)" : "", "\":</b>\n");
   message += "<b>\u0418\u043C\u044F:</b> ".concat(this.name.value, "\n");
   message += "<b>\u0422\u0435\u043B\u0435\u0444\u043E\u043D:</b> ".concat(this.phone.value, "\n");
-  if (this.message.value) {
+  if (!isGroupForm && this.message.value) {
     message += "<b>\u0421\u043E\u043E\u0431\u0449\u0435\u043D\u0438\u0435:</b> ".concat(this.message.value, "\n");
   }
   axios.post(URL_API, {
@@ -35,6 +36,7 @@ function sendMessageTelegram(evt) {
   }).then(function () {
     console.log("Заявка отправлена");
     formSuccess();
+    console.log(message);
   })["catch"](function (err) {
     console.warn(err);
     formError();
@@ -334,10 +336,6 @@ var onPhoneInput = function onPhoneInput(evt) {
     if (inputNumbersValue[0] === "9") inputNumbersValue = "7" + inputNumbersValue;
     var firstSymbols = inputNumbersValue[0] === "8" ? "8" : "+7";
     formattedInputValue = firstSymbols + " ";
-    if (inputNumbersValue[0] === "8") {
-      //phoneInputs[0].setAttribute("pattern", ".{17,}");
-      console.log(phoneInputs[0].getAttribute("pattern"));
-    }
     if (inputNumbersValue.length > 1) {
       formattedInputValue += "(" + inputNumbersValue.slice(1, 4);
     }
