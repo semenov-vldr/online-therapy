@@ -32,15 +32,13 @@
       padding: 20px 20px 40px
     &:hover .articles__item-link
       text-decoration: underline
-    //&:hover .articles__item-link::after
-    //  width: 100%
-    //  left: 0
     &.active
       display: flex
     &-title
       @include fontSize(32, 40)
     &-text
       color: rgba($color-dark, 0.7)
+      text-indent: 30px
       @include fontSize(16, 20)
 
 
@@ -55,17 +53,6 @@
       width: 100%
       @include tablet
         padding-top: 20px
-      //&:after
-      //  content: ""
-      //  position: absolute
-      //  display: block
-      //  bottom: 0
-      //  height: 2px
-      //  left: 50%
-      //  background: none repeat scroll 0 0 transparent
-      //  background: currentColor
-      //  transition: width 0.3s ease 0s, left 0.3s ease 0s
-      //  width: 0
 
   &__nav
     display: flex

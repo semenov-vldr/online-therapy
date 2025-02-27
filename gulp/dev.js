@@ -52,7 +52,9 @@ gulp.task("pug:dev", function () {
     .src("./src/pages/**/*.pug")
     .pipe(changed("./build/", { hasChanged: changed.compareContents }))
     .pipe(plumber(plumberNotify("Error HTML")))
-    .pipe(gulpPug({}))
+    .pipe(gulpPug({
+      pretty: true,
+    }))
     .pipe(gulp.dest("./build/"))
     .pipe(browserSync.reload({
       stream: true,

@@ -63,6 +63,12 @@
 
 .block-article.about
 
+  .block-article__container
+    @include tablet
+      padding: 0 20px
+    @include mobile
+      padding: 0 10px
+
   img
     position: relative
     max-width: 560px
