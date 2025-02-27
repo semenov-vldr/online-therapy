@@ -305,6 +305,24 @@ function useDynamicAdapt() {
   }
 }
 "use strict";
+
+// Очистить тествоый код
+
+var buttonsHidden = document.querySelectorAll(".button-hidden");
+if (buttonsHidden) {
+  buttonsHidden.forEach(function (btn, index) {
+    var dataClass = btn.dataset["class"];
+    var block = document.querySelector(".".concat(dataClass));
+    btn.textContent = "\u0421\u043A\u0440\u044B\u0442\u044C \u0431\u043B\u043E\u043A ".concat(index + 1);
+    btn.addEventListener("click", function () {
+      if (block) {
+        block.classList.toggle("hidden");
+        var isActive = block.classList.contains("hidden");
+        btn.textContent = "".concat(isActive ? "Показать" : "Скрыть", " \u0431\u043B\u043E\u043A ").concat(index + 1);
+      }
+    });
+  });
+}
 "use strict";
 
 var images = document.querySelectorAll("img");
