@@ -17,6 +17,8 @@ const babel =       require('gulp-babel');
 //const imagemin =  require('gulp-imagemin');
 const changed =     require('gulp-changed');
 
+const autoprefixer = require('gulp-autoprefixer');
+
 
 // ---- Tasks ----
 
@@ -70,6 +72,7 @@ gulp.task("sass:dev", function () { // Добавить autoprefixer, csso
     .pipe(sourceMaps.init())
     .pipe(sassGlob())
     .pipe(sass())
+    .pipe(autoprefixer())
     .pipe(sourceMaps.write())
     .pipe(concatCss("main.css"))
     .pipe(gulp.dest("./build/assets/css/"))
