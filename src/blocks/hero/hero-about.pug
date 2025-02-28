@@ -10,5 +10,10 @@ section.hero.hero-about
             a.button-outline.button-outline--light(href="https://t.me/symbolisierung" target="_blank") telegram-канал
             a.button-outline.button-outline--light(href="https://wa.me/79366660016" target="_blank") Whatsapp
 
-        img.hero__img(src='./assets/img/about-group-cover.png' alt="")
+        //img.hero__img(src='./assets/img/about-group-cover.png' alt="")
+
+        picture.hero__img
+            source(srcset='./assets/img/about-group-cover-mobile.png' media="(max-width: 768px)")
+            img(src='./assets/img/about-group-cover.png' alt="Pic")
+
         span.hero__decor-circle
