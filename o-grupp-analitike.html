@@ -38,7 +38,11 @@
           <div class="hero__content">
             <h1 class="hero__title font-decor">Ксения <br> Барке</h1>
             <div class="hero__nameplate"><span>Психотерапевт</span><span>&bull;</span><span>Клинический психолог</span></div><a class="button-outline button-outline--light" href="https://t.me/symbolisierung" target="_blank">telegram-канал</a><a class="button-outline button-outline--light" href="https://wa.me/79366660016" target="_blank">Whatsapp</a>
-          </div><img class="hero__img" src="./assets/img/about-group-cover.png" alt=""><span class="hero__decor-circle"></span>
+          </div>
+          <!--img.hero__img(src='./assets/img/about-group-cover.png' alt="")-->
+          <picture class="hero__img">
+            <source srcset="./assets/img/about-group-cover-mobile.png" media="(max-width: 768px)"><img src="./assets/img/about-group-cover.png" alt="Pic">
+          </picture><span class="hero__decor-circle"></span>
         </div>
       </section>
       <section class="education light-block">
@@ -120,7 +124,8 @@
                   <blockquote>Интерпретируя мир, психоанализ изменяет&nbsp;его.</blockquote>
                   <cite>Поль Рикер</cite>
                 </div>
-              </div><span class="services__item-price font-decor">7000 руб./сессия</span>
+              </div>
+              <!--span.services__item-price.font-decor 7000 руб./сессия-->
             </article>
             <article class="services__item">
               <h3 class="services__item-title font-decor">Супервизия для психологов</h3>
