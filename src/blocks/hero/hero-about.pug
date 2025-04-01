@@ -1,18 +1,16 @@
 section.hero.hero-about
     .hero__container.container
-        .hero__content
+        .hero__content(data-aos="fade-right")
             h1.hero__title.font-decor Ксения <br> Барке
             .hero__nameplate
                 span Психотерапевт
                 span &bull;
                 span Клинический психолог
 
-            a.button-outline.button-outline--light(href="https://t.me/symbolisierung" target="_blank") telegram-канал
-            a.button-outline.button-outline--light(href="https://wa.me/79366660016" target="_blank") Whatsapp
+            a.button-outline.button-outline--light(href="https://t.me/symbolisierung" target="_blank" data-aos="fade-right" data-aos-delay="150") telegram-канал
+            a.button-outline.button-outline--light(href="https://wa.me/79366660016" target="_blank" data-aos="fade-right" data-aos-delay="150") Whatsapp
 
-        //img.hero__img(src='./assets/img/about-group-cover.png' alt="")
-
-        picture.hero__img
+        picture.hero__img(data-aos="fade-right")
             source(srcset='./assets/img/about-group-cover-mobile.png' media="(max-width: 768px)")
             img(src='./assets/img/about-group-cover.png' alt="Pic")
 

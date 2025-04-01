@@ -5,4 +5,5 @@ mixin hero_article(title, author)
                 h1.hero__title.font-decor= title
                 .hero__breadcrumbs
                     a(href="yeshche-o-gruppovoy-psikhoterapii.html") Все статьи
-                    span= author
+                    if author
+                        span= author
