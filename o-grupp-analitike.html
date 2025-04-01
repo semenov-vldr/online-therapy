@@ -15,9 +15,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;family=Montserrat:ital,wght@0,100..900;1,100..900&amp;family=Noto+Sans:ital,wght@0,100..900;1,100..900&amp;family=Playfair+Display:ital@0;1&amp;family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/libs.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/main.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js"></script>
   </head>
   <body>
     <header class="header">
@@ -35,20 +35,19 @@
     <main class="main">
       <section class="hero hero-about">
         <div class="hero__container container">
-          <div class="hero__content">
+          <div class="hero__content" data-aos="fade-right">
             <h1 class="hero__title font-decor">Ксения <br> Барке</h1>
-            <div class="hero__nameplate"><span>Психотерапевт</span><span>&bull;</span><span>Клинический психолог</span></div><a class="button-outline button-outline--light" href="https://t.me/symbolisierung" target="_blank">telegram-канал</a><a class="button-outline button-outline--light" href="https://wa.me/79366660016" target="_blank">Whatsapp</a>
+            <div class="hero__nameplate"><span>Психотерапевт</span><span>&bull;</span><span>Клинический психолог</span></div><a class="button-outline button-outline--light" href="https://t.me/symbolisierung" target="_blank" data-aos="fade-right" data-aos-delay="150">telegram-канал</a><a class="button-outline button-outline--light" href="https://wa.me/79366660016" target="_blank" data-aos="fade-right" data-aos-delay="150">Whatsapp</a>
           </div>
-          <!--img.hero__img(src='./assets/img/about-group-cover.png' alt="")-->
-          <picture class="hero__img">
+          <picture class="hero__img" data-aos="fade-right">
             <source srcset="./assets/img/about-group-cover-mobile.png" media="(max-width: 768px)"><img src="./assets/img/about-group-cover.png" alt="Pic">
           </picture><span class="hero__decor-circle"></span>
         </div>
       </section>
       <section class="education light-block">
         <div class="education__container container">
-          <h2 class="title-section education__title">Образование</h2>
-          <ul class="education__list">
+          <h2 class="title-section education__title" data-aos="fade-right">Образование</h2>
+          <ul class="education__list" data-aos="fade-right">
             <li>Национальный исследовательский университет «Высшая школа экономики», магистр психологии</li>
             <li>Международная школа группового психоанализа (Coirag, Egatin, ЕАРПП), программа «Теория группового и индивидуального психоанализа»</li>
             <li>Московский государственный медико-стоматологический университет имени&nbsp;.И.&nbsp;Евдокимова, клинический психолог</li>
@@ -56,13 +55,13 @@
             <li>Московский институт психоанализа, программа «Групповой психоанализ и психодинамическая психотерапия»</li>
             <li>The center for group studies, Нью-Йорк, программа подготовки групп-аналитиков</li>
           </ul>
-          <p class="education__text">Регулярные супервизии под руководством зарубежных и российских психоаналитиков</p>
-          <p class="education__text">Ассоциированный член МПА, член ЕАРПП, Член Ассоциации Психосоциальных Исследований (Великобритания)</p>
+          <p class="education__text" data-aos="fade-right">Регулярные супервизии под руководством зарубежных и российских психоаналитиков</p>
+          <p class="education__text" data-aos="fade-right">Ассоциированный член МПА, член ЕАРПП, Член Ассоциации Психосоциальных Исследований (Великобритания)</p>
         </div>
       </section>
       <section class="block-article themes border-light">
         <div class="block-article__container container">
-          <aside class="block-article__aside">
+          <aside class="block-article__aside" data-aos="fade-right">
             <h2 class="title-section decor-line decor-line--light">С какими темами я работаю</h2>
             <p class="block-article__subtitle">Психотерапия — это путешествие, а не пункт назначения</p>
             <div class="block-article__text">
@@ -80,17 +79,17 @@
               </p>
             </div>
           </aside>
-          <div class="block-article__img"><img src="./assets/img/topics.png" alt="pic"></div>
+          <div class="block-article__img" data-aos="fade-right" data-aos-delay="150"><img src="./assets/img/topics.png" alt="pic"></div>
         </div>
       </section>
       <section class="block-article light-block ethics">
         <div class="block-article__container container">
-          <aside class="block-article__aside">
+          <aside class="block-article__aside" data-aos="fade-right">
             <h2 class="title-section decor-line decor-line--dark">Этика психоанализа</h2>
             <p class="block-article__subtitle">Задача психотерапевта заключается в том, чтобы создать безопасное и неосуждающее пространство для исследования мыслей, чувств и опыта</p>
             <div class="block-article__img"><img src="./assets/img/ethics.png" alt="pic"></div>
           </aside>
-          <div class="block-article__text">
+          <div class="block-article__text" data-aos="fade-right" data-aos-delay="150">
             <p class="text-indent">Я придерживаюсь <b>психоаналитической этики</b> об ответственности перед клиентом, которая предусматривает <b>конфиденциальность психотерапевтической работы, соблюдение психотерапевтических границ и регулярную супервизию.</b></p>
             <p class="text-indent">
               Психоанализ похож на путешествие – на неторопливое путешествие вглубь себя.Путешествие, которое принесет множество открытий – как приятных и красивых, так и не очень.
@@ -102,9 +101,9 @@
       </section>
       <section class="services border-light" id="services">
         <div class="services__container container">
-          <h2 class="title-section services__title">Услуги</h2>
+          <h2 class="title-section services__title" data-aos="fade-right">Услуги</h2>
           <div class="services__list">
-            <article class="services__item">
+            <article class="services__item" data-aos="fade-right">
               <h3 class="services__item-title font-decor">Групповой психоанализ</h3>
               <p class="text-indent">Потребность быть причастным к группе – наша базовая потребность. Терапевтическая группа является мощным инструментом, позволяющим не только углубиться в мир отношений и решить внутриличностные конфликты, но так же обрести то ощущение своего места в жизни и обществе, которое нам необходимо Порой только в групповой терапии мы можем проработать травматичные моменты, которые в индивидуальной терапии могут даже не появиться на поверхности.</p>
               <ul class="services__item-list">
@@ -115,7 +114,7 @@
                 <li>Сила групповой терапии заключается в ее способности бросить вызов нашим старым шаблонам и убеждениям, прокладывая путь к личностному росту.</li>
               </ul><span class="services__item-price font-decor">2500 руб./сессия</span>
             </article>
-            <article class="services__item">
+            <article class="services__item" data-aos="fade-right">
               <h3 class="services__item-title font-decor">Индивидуальный психоанализ</h3>
               <p class="text-indent">Индивидуальный психоанализ – самое увлекательное и самое трудоемкое исследование, которое мы можем предпринять в своей жизни – исследование своих внутриличностных конфликтов, травм, трудностей в отношениях.</p>
               <p class="text-indent">В конечном итоге, психоанализ позволяет нам стать авторами своей собственной жизнь. Возвращаются важные части нашей самости, которые раньше были утеряны. И облекая в слова то, что мы переживаем, мы находим в себе возможности трансформировать свою жизнь, обретая новые смыслы, и вступать на путь реализации своего истинного Я.</p>
@@ -125,9 +124,8 @@
                   <cite>Поль Рикер</cite>
                 </div>
               </div>
-              <!--span.services__item-price.font-decor 7000 руб./сессия-->
             </article>
-            <article class="services__item">
+            <article class="services__item" data-aos="fade-right">
               <h3 class="services__item-title font-decor">Супервизия для психологов</h3>
               <p class="text-indent">Клинический разбор Вашего случая работы с клиентом. Стоимость супервизии равна стоимости Вашей работы с клиентом.</p>
               <div class="services__blockquote blockquote blockquote--light">
@@ -143,7 +141,7 @@
                 </div>
               </div>
             </article>
-            <article class="services__item">
+            <article class="services__item" data-aos="fade-right">
               <h3 class="services__item-title font-decor">Психотерапия детей и подростков</h3>
               <p class="text-indent">Терапия - это безопасное пространство, где дети и подростки могут исследовать свои мысли, чувства и опыт, не опасаясь осуждения или критики. Это место, где они могут быть самими собой и искать решения своих проблемам.</p>
               <p class="text-indent">Психотерапия подростков заключается не в том, чтобы исправить их, а в том, чтобы дать им возможность развить навыки рефлексии, необходимые им для преодоления трудностей подросткового возраста.</p>
@@ -202,13 +200,15 @@
         </div>
       </div>
     </footer>
-    <div class="alert-form"><span>Спасибо!</span><span>Заявка заявка успешно отправлена.</span><span>Мы с вами свяжемся в течение 30 минут</span></div>
+    <div class="alert-form"><span>Спасибо за вашу заявку!</span><span>До скорой связи!</span></div>
     <button class="btn-up" title="Наверх"><img src="./assets/img/icons/up.svg"></button><a class="whatsapp" href="https://wa.me/79366660016" target="_blank" title="WhatsApp">
       <picture>
         <source srcset="./assets/img/icons/whatsapp-green-mobile.svg" media="(max-width: 767px)"><img src="./assets/img/icons/whatsapp-green-desktop.svg">
       </picture></a>
     <div id="contacts"></div>
   </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="./assets/scripts/libs.min.js"></script>
   <script src="./assets/scripts/main.js" type="module"></script>
 </html>

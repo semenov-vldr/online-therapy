@@ -305,6 +305,12 @@ function useDynamicAdapt() {
   }
 }
 "use strict";
+
+AOS.init({
+  once: true,
+  duration: 1000
+  //offset: 120
+});
 "use strict";
 
 var images = document.querySelectorAll("img");
