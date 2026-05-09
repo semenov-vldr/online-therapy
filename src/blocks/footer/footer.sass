@@ -14,6 +14,15 @@
     flex-direction: column
     gap: 30px
 
+    &-checkbox
+      display: block
+      margin: 16px 0
+      input
+        width: 16px
+        height: 16px
+        min-height: auto
+        margin-right: 8px
+
     button
       background-color: $primary
       width: 100%
@@ -83,3 +92,32 @@
         width: 80px
         @include tablet
           width: 60px
+
+
+
+  &__bottom
+    display: flex
+    flex-direction: column
+    gap: 10px
+    margin: 16px auto 0
+    grid-column: 1 / -1
+    text-align: center
+
+  &__author
+    font-size: 32px
+    @include mobile
+      font-size: 24px
+
+  &__profession,
+  &__copyright,
+  &__inn,
+  &__tel,
+  &__email
+    font-size: 16px
+    @include mobile
+      font-size: 14px
+
+  &__docs
+    font-size: 14px
+    &:hover
+      text-decoration: underline

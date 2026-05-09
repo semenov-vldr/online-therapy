@@ -7,6 +7,11 @@ footer.footer.light-block#footer
                 input.input--light(placeholder="Ваше имя" name="name" minlength="3" autocomplete="off" required)
                 input.input--light(placeholder="Телефон" name="phone" inputmode="tel" data-tel-input minlength="15" autocomplete="off" required)
                 textarea.input--light(rows="4" name="message" placeholder="Сообщение")
+
+                label.footer__form-checkbox
+                    input(type="checkbox" name="success" required)
+                    span Даю согласие на обработку персональных данных
+
                 button(type="submit") Отправить
 
         .footer__contacts
@@ -27,6 +32,19 @@ footer.footer.light-block#footer
                     img(src="./assets/img/icons/telegram.svg")
                 a.footer__contacts-social-item(href="mailto:kseniabarke@gmail.com" title="Email" target="_blank")
                     img(src="./assets/img/icons/email.svg")
+
+        .footer__bottom
+            span.footer__author.font-decor Барке Ксения Андреевна
+            span.footer__inn ИНН 246316523369
+            a.footer__email(href="mailto: kseniabarke@gmail.com") kseniabarke@gmail.com
+            a.footer__tel(href="tel:89366660016") 8 936 666 00 16
+            span.footer__profession Психотерапевт, клинический психолог
+            br
+            a.footer__docs(href="./assets/files/offer-robokassa.pdf" target="_blank") Оферта
+            a.footer__docs(href="./assets/files/policy.pdf" target="_blank") Политика обработки персональных данных
+            a.footer__docs(href="./assets/files/personal-data.pdf" target="_blank") Политика конфиденциальности
+
+            span.footer__copyright © 2026
 
 
 include ../alert-form/alert-form

@@ -19,4 +19,7 @@ section.feedback-group.border-light
             .feedback-group__form-body
                 input.input--dark(placeholder="Ваше имя" name="name" minlength="3" autocomplete="off" required)
                 input.input--dark(placeholder="Телефон" name="phone" inputmode="tel" data-tel-input minlength="15" autocomplete="off" required)
+                label.feedback-group__form-checkbox
+                    input(type="checkbox" name="success" required)
+                    span Даю согласие на обработку персональных данных
                 button(type="submit") Отправить
