@@ -311,6 +311,11 @@ AOS.init({
   duration: 1000
   //offset: 120
 });
+
+var footerCopyright = document.querySelector("footer .footer__copyright");
+if (footerCopyright) {
+  footerCopyright.textContent = "\xA9 ".concat(new Date().getFullYear());
+}
 "use strict";
 
 var images = document.querySelectorAll("img");
